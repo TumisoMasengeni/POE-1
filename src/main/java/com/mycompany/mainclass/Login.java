@@ -30,4 +30,38 @@ class Login {
         && capturedPassword.matches(".*[^a-zA-Z0-9].*"); // Check for at least one special character
         
     }
+    
+    public String registerUser(String capturedUsername, String capturedPassword){
+         // Check if username and password meet the required conditions
+        if (checkUserName(capturedUsername) && checkPasswordComplexity(capturedPassword)) {
+            return "username and password successfully captured ";
+          
+            
+        } else if (!checkUserName(capturedUsername)) {
+            return "username not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length";
+            
+        } else if (!checkPasswordComplexity(capturedPassword)) {
+            return "Password not correctly formatted, please ensure that your password contains atleast 8 characters, capital letter, special character and a number";
+        }else{
+        return "Registration failed: Invalid login information.";}
+    }
+    
+    public boolean loginUser(String LoginUserName, String LoginpassWord, String capturedUsername, String capturedPassword){
+    
+         if (LoginUserName == null || LoginUserName.isEmpty() || LoginpassWord == null || LoginpassWord.isEmpty()) {
+            return false;
+        }
+        return LoginUserName.equals(capturedUsername) && LoginpassWord.equals(capturedPassword);
+    }
+
+       
+    
+    public  String returnLoginStatus(String LoginUserName, String LoginpassWord, String capturedUsername, String capturedPassword){
+      if (loginUser(LoginUserName, LoginpassWord, capturedUsername, capturedPassword)) {
+            return "Welcome " + name + " " + surname + ", it is great to see you again.";
+        } else {
+            return "username/password is incorrect, please try again.";
+        } 
+
+    }
 }
