@@ -37,10 +37,10 @@ public class MainClass {
         
         //prompting user to enter name, last name and create a username and password
         System.out.println("Please enter your name:");
-        user.name = input.next();
+        name = input.next();
         
         System.out.println("please enter your last name:");
-        user.surname = input.next();
+        surname = input.next();
         
         
         //creating username and password
@@ -55,7 +55,7 @@ public class MainClass {
        if(user.checkUserName(capturedUsername) && user.checkPasswordComplexity(capturedPassword) ){
            
           //calling registerUser method
-          String register = user.registeruser(capturedUsername, capturedPassword);
+          String register = user.registerUser(capturedUsername, capturedPassword);
          
           //Display registration output
           System.out.println(register);
