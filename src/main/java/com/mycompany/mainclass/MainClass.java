@@ -11,6 +11,8 @@ import java.util.Scanner;
  * @author Tumiso
  */
 public class MainClass {
+    
+    
 
     public static void main(String[] args) {
              /*
@@ -21,10 +23,10 @@ public class MainClass {
         
        String name;
        String surname;
-        String capturedUsername = null;
-        String capturedPassword = null;
-       int usernameLength = 5;
-        int passwordLength = 8;
+       String capturedUsername;
+        String capturedPassword;
+       //int usernameLength = 5;
+       // int passwordLength = 8;
         
         
         //Class instance creation
@@ -37,10 +39,10 @@ public class MainClass {
         
         //prompting user to enter name, last name and create a username and password
         System.out.println("Please enter your name:");
-        name = input.next();
+        user.name = input.next();
         
         System.out.println("please enter your last name:");
-        surname = input.next();
+        user.surname = input.next();
         
         
         //creating username and password
@@ -52,34 +54,44 @@ public class MainClass {
        user.capturedPassword = input.next();
        
          //Proccess of verifying conditions for registration
-       if(user.checkUserName(capturedUsername) && user.checkPasswordComplexity(capturedPassword) ){
+       if(user.checkUserName(user.capturedUsername) && user.checkPasswordComplexity(user.capturedPassword) ){
            
-          //calling registerUser method
-          String register = user.registerUser(capturedUsername, capturedPassword);
-         
-          //Display registration output
-          System.out.println(register);
+        //callinng the registerUser method
+        String register;
+                register= user.registerUser(user.capturedUsername, user.capturedPassword);
+        System.out.println(register);
         
 }
        
-       //login to account
        
+       //login to account
+       if(user.capturedUsername.contains("_") && user.capturedUsername.length() <= 5 && user.checkPasswordComplexity(user.capturedPassword)){
        //prompting user to enter username and passoword
        System.out.println("Please enter your username to login:");
-       String LoginUserName = input.next();
+       user.LoginUserName = input.next();
        
        System.out.println("Please enter your password to login:");
-       String LoginpassWord = input.next();
+        user.LoginpassWord = input.next();
        
        //testing if password and username entered matches recorded passoword and username
-       if(user.loginUser(LoginUserName, LoginpassWord, capturedUsername , capturedPassword)){
+       if(user.loginUser(user.LoginUserName, user.LoginpassWord, user.capturedUsername , user.capturedPassword)){
                  
-      //calling returnLoginStatus from login class
-       String loginStatus = user.returnLoginStatus(LoginUserName, LoginpassWord, capturedUsername, capturedPassword);
-       // display message for login status
-        System.out.println(loginStatus);
-   
-           
+      
+           //calling loginstatus method
+           String status = user.returnLoginStatus(user.LoginUserName, user.LoginpassWord, user.capturedUsername, user.capturedPassword);
+           System.out.println(status);
+       }
+       else{
+            //calling loginstatus method
+           String status = user.returnLoginStatus(user.LoginUserName, user.LoginpassWord, user.capturedUsername, user.capturedPassword);
+           System.out.println(status);
+       }
+       
+       }
+       else{
+            String register;
+                register= user.registerUser(user.capturedUsername, user.capturedPassword);
+        System.out.println(register);
        }
     }
 }
