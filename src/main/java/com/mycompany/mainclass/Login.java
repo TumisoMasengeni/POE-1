@@ -10,27 +10,73 @@ package com.mycompany.mainclass;
  */
 class Login {
 
-    String name;
+   
     //variable declaration
-    String surname;
-    String capturedUsername;
-    String capturedPassword;
-    String LoginUserName;
-    String LoginpassWord;
+     private String name;
+    private String surname;
+    private String capturedUsername;
+    private String capturedPassword;
+    private String LoginUserName;
+    private String LoginpassWord;
     
+    //setting getter and setter methods
+    public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+public String getsurname() {
+    return surname;
+}
+
+public void setsurname(String surname) {
+    this.surname = surname;
+}
+public String getUsername() {
+    return capturedUsername;
+}
+public void setUsername(String capturedUsername) {
+    this.capturedUsername = capturedUsername;
+}
+
+public String getPassword() {
+    return capturedPassword;
+}
+public void setPassword(String capturedPassword) {
+    this.capturedPassword = capturedPassword;
+}
+
+public String getLoginUsername() {
+    return LoginUserName;
+}
+
+public void setLoginUsername(String LoginUserName) {
+    this.LoginUserName = LoginUserName;
+}
+
+public String getLoginPassword() {
+    return LoginpassWord;
+}
+public void setLoginPassword(String LoginpassWord) {
+    this.LoginpassWord = LoginpassWord;
+}
+
+
     
     
      public boolean checkUserName(String capturedUsername){
           
-         // if (capturedUsername == null || capturedUsername.isEmpty()) {
-         //   return false;}
-        // Check if the username is less than or equal to 5 characters and contains an underscore
+         if (capturedUsername == null || capturedUsername.isEmpty()) {
+            return false;}
+         //Check if the username is less than or equal to 5 characters and contains an underscore
         return capturedUsername.length() <= 5 && capturedUsername.contains("_");
     }
     
     public boolean checkPasswordComplexity(String capturedPassword){
-        //  if (capturedPassword == null || capturedPassword.isEmpty()) {
-          //  return false; }
+         if (capturedPassword == null || capturedPassword.isEmpty()) {
+            return false; }
      
     // Ensure password is at least 8 characters, has one uppercase letter, one digit, and one special character
     return capturedPassword.length() >= 8 

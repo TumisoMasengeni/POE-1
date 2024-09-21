@@ -23,8 +23,10 @@ public class MainClass {
         
        String name;
        String surname;
-       String capturedUsername;
-        String capturedPassword;
+       String capturedUsername ;
+        String capturedPassword ;
+        String LoginUserName ;
+        String LoginpassWord ;
        //int usernameLength = 5;
        // int passwordLength = 8;
         
@@ -39,59 +41,66 @@ public class MainClass {
         
         //prompting user to enter name, last name and create a username and password
         System.out.println("Please enter your name:");
-        user.name = input.next();
+        //user.name = input.next();
+        user.setName(input.next());
         
         System.out.println("please enter your last name:");
-        user.surname = input.next();
+        //user.surname = input.next();
+        user.setsurname(input.next());
         
         
         //creating username and password
         System.out.println("Please create a username not longer than 5 characters and contains an underscore");
-        user.capturedUsername = input.next();
+        //user.capturedUsername = input.next();
+        user.setUsername(input.next());
         
         
        System.out.println("Please create a password longer than 7 characters");
-       user.capturedPassword = input.next();
+      // user.capturedPassword = input.next();
+       user.setPassword(input.next());
        
          //Proccess of verifying conditions for registration
-       if(user.checkUserName(user.capturedUsername) && user.checkPasswordComplexity(user.capturedPassword) ){
+       if(user.checkUserName(user.getUsername()) && user.checkPasswordComplexity(user.getPassword()) ){
            
         //callinng the registerUser method
         String register;
-                register= user.registerUser(user.capturedUsername, user.capturedPassword);
+                register= user.registerUser(user.getUsername(), user.getPassword());
         System.out.println(register);
         
 }
        
        
        //login to account
-       if(user.capturedUsername.contains("_") && user.capturedUsername.length() <= 5 && user.checkPasswordComplexity(user.capturedPassword)){
-       //prompting user to enter username and passoword
+       if(user.getUsername().contains("_") && user.getUsername().length() <= 5 && user.checkPasswordComplexity(user.getPassword())){
+       //prompting user to enter username and password
        System.out.println("Please enter your username to login:");
-       user.LoginUserName = input.next();
+       //user.LoginUserName = input.next();
+       user.setLoginUsername(input.next());
        
        System.out.println("Please enter your password to login:");
-        user.LoginpassWord = input.next();
+        //user.LoginpassWord = input.next();
+       user.setLoginPassword(input.next());
        
        //testing if password and username entered matches recorded passoword and username
-       if(user.loginUser(user.LoginUserName, user.LoginpassWord, user.capturedUsername , user.capturedPassword)){
+       if(user.loginUser(user.getLoginUsername(), user.getLoginPassword(), user.getUsername() , user.getPassword())){
                  
       
            //calling loginstatus method
-           String status = user.returnLoginStatus(user.LoginUserName, user.LoginpassWord, user.capturedUsername, user.capturedPassword);
+           String status = user.returnLoginStatus(user.getLoginUsername(), user.getLoginPassword() ,user.getUsername() ,user.getPassword() );
            System.out.println(status);
        }
        else{
             //calling loginstatus method
-           String status = user.returnLoginStatus(user.LoginUserName, user.LoginpassWord, user.capturedUsername, user.capturedPassword);
+           String status = user.returnLoginStatus(user.getLoginUsername(), user.getLoginPassword(),user.getUsername() , user.getPassword());
            System.out.println(status);
        }
        
        }
        else{
             String register;
-                register= user.registerUser(user.capturedUsername, user.capturedPassword);
+                register= user.registerUser(user.getUsername(), user.getPassword());
         System.out.println(register);
        }
     }
+    
 }
