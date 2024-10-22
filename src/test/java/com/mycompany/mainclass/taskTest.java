@@ -25,7 +25,7 @@ public class taskTest {
     @Test
     public void testChecktaskdescription() {
         System.out.println("checktaskdescription");
-        String taskDescription = "Create login to authenticate user";
+        String taskDescription = "Create add task feature to add task users";
         task instance = new task();
         boolean expResult = true;
         boolean result = instance.checktaskdescription(taskDescription);
@@ -40,8 +40,8 @@ public class taskTest {
     @Test
     public void testCreateTaskID() {
         System.out.println("createTaskID");
-        String taskname = "login feature";
-        String developerDetails = "Robyn Harrison";
+        String taskname = "Add task feature";
+        String developerDetails = "Mike Smith";
         int tasks = 2;
         task instance = new task();
        
@@ -58,13 +58,13 @@ public class taskTest {
     @Test
     public void testPrintTaskdetails() {
         System.out.println("printTaskdetails");
-        String taskDescription = "Create login to authenticate user";
+        String taskDescription = "Create add task feature to add task users";
         String taskID = "";
-        String taskname = "Login feature";
-        String developerDetails = "Robyn Harrison";
+        String taskname = "Add task feature";
+        String developerDetails = "Mike smith";
         int tasks = 2;
-        String statusOutput = "To do";
-        int duration = 8;
+        String statusOutput = "Doing";
+        int duration = 10;
         task instance = new task();
        
         String result = instance.printTaskdetails(taskDescription, taskID, taskname, developerDetails, tasks, statusOutput, duration);
