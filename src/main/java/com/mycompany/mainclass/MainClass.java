@@ -114,7 +114,7 @@ public class MainClass {
                       String taskname = JOptionPane.showInputDialog(top, "Enter task name:");
                       
                       //asking user to describe task
-                      String taskDescription =JOptionPane.showInputDialog(top, "Enter task description:");
+                      String taskDescription =JOptionPane.showInputDialog(top, "Enter task description(must me less than 50 characters):");
                       
                       //if statement if task description meets condtions
                       if(create.checktaskdescription(taskDescription)){
@@ -127,7 +127,7 @@ public class MainClass {
                       }
                       
                       //asking user to enter developer details
-                      String developerDetails =  JOptionPane.showInputDialog(top, "Enter developer's fullname:");
+                      String developerDetails =  JOptionPane.showInputDialog(top, "Enter developer's fullname (name and surname):");
                       
                       //asking user to enter task duration in hours
                       int duration = Integer.parseInt(JOptionPane.showInputDialog(top, "Enter task duration (in hours)", "task duration", JOptionPane.PLAIN_MESSAGE));
