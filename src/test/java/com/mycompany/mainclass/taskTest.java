@@ -25,9 +25,9 @@ public class taskTest {
     @Test
     public void testChecktaskdescription() {
         System.out.println("checktaskdescription");
-        String taskDescription = "ngvvvvvvhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjjj";
+        String taskDescription = "Create login to authenticate user";
         task instance = new task();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.checktaskdescription(taskDescription);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -40,9 +40,9 @@ public class taskTest {
     @Test
     public void testCreateTaskID() {
         System.out.println("createTaskID");
-        String taskname = "login";
-        String developerDetails = "tommy";
-        int tasks = 0;
+        String taskname = "login feature";
+        String developerDetails = "Robyn Harrison";
+        int tasks = 2;
         task instance = new task();
        
         String result = instance.createTaskID(taskname, developerDetails, tasks);
@@ -58,13 +58,13 @@ public class taskTest {
     @Test
     public void testPrintTaskdetails() {
         System.out.println("printTaskdetails");
-        String taskDescription = "jhhhhhhhg";
-        String taskID = "1";
-        String taskname = "j";
-        String developerDetails = "ff";
-        int tasks = 0;
-        String statusOutput = "done";
-        int duration = 0;
+        String taskDescription = "Create login to authenticate user";
+        String taskID = "";
+        String taskname = "Login feature";
+        String developerDetails = "Robyn Harrison";
+        int tasks = 2;
+        String statusOutput = "To do";
+        int duration = 8;
         task instance = new task();
        
         String result = instance.printTaskdetails(taskDescription, taskID, taskname, developerDetails, tasks, statusOutput, duration);
