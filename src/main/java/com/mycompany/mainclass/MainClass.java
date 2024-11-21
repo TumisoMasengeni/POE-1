@@ -76,12 +76,12 @@ public class MainClass {
 
                 int option = 0;
                 String[] definetasks = null;
-                String[] developer = {"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glenda Oberholzer"};
-                String[] taskNames = {"Create Login", "Create Add Features", "Create Reports", "Add Arrays"};
+                String[] developer = null;
+                String[] taskNames = null;
 
-                String[] tasKid = {"","","","",""};
-                int[] taskDuration = {5, 8, 2, 11};
-                String[] tasKstatus =  {"To Do", "Doing", "Done", "To Do"};
+                String[] tasKid = null;
+                int[] taskDuration = null;
+                String[] tasKstatus =  null;
                 int tasks = 0;
 
                 while (option != 3) {
