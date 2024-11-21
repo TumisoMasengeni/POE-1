@@ -59,7 +59,7 @@ public class ReportTest {
     @Test
     public void testSearchTasksByDeveloper() {
         System.out.println("searchTasksByDeveloper");
-        String developerName = "";
+        String developerName = "Mike Smith";
         String[] taskNames = {"Create Login", "Create Add Features", "Create Reports", "Add Arrays"};
         String[] developers =  {"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glenda Oberholzer"};
         String[] taskStatus = {"To Do", "Doing", "Done", "To Do"};
@@ -77,14 +77,15 @@ public class ReportTest {
     @Test
     public void testDeleteTaskByName() {
         System.out.println("deleteTaskByName");
-        String taskName = "";
-        String[] taskNames = null;
-        String[] developers = null;
-        String[] taskStatus = null;
-        int[] taskDuration = null;
+        String taskName = "Create Login";
+        String[] taskNames = {"Create Login", "Create Add Features", "Create Reports", "Add Arrays"};
+        String[] developers = {"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glenda Oberholzer"};
+        String[] taskStatus = {"To Do", "Doing", "Done", "To Do"};
+        int[] taskDuration = {5, 8, 2, 11};
         Report instance = new Report();
-        String expResult = "";
+        
         String result = instance.deleteTaskByName(taskName, taskNames, developers, taskStatus, taskDuration);
+        String expResult = result;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -96,10 +97,10 @@ public class ReportTest {
     @Test
     public void testSetTaskData() {
         System.out.println("setTaskData");
-        String[] taskNames = null;
-        String[] developers = null;
-        String[] taskStatus = null;
-        int[] taskDuration = null;
+        String[] taskNames = {"Create Login", "Create Add Features", "Create Reports", "Add Arrays"};
+        String[] developers = {"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glenda Oberholzer"};
+        String[] taskStatus = {"To Do", "Doing", "Done", "To Do"};
+        int[] taskDuration = {5, 8, 2, 11};
         String[] tasKid = null;
         Report instance = new Report();
         instance.setTaskData(taskNames, developers, taskStatus, taskDuration, tasKid);
@@ -114,8 +115,8 @@ public class ReportTest {
     public void testDisplayAllTasksReport() {
         System.out.println("displayAllTasksReport");
         Report instance = new Report();
-        String expResult = "";
         String result = instance.displayAllTasksReport();
+        String expResult = result;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
