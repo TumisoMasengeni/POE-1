@@ -12,8 +12,8 @@ class Login {
 
    
     //variable declaration
-     private String name;
-    private String surname;
+   //  private String name;
+    //private String surname;
     private String capturedUsername;
     private String capturedPassword;
     private String LoginUserName;
